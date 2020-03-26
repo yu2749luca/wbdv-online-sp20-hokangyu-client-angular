@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'wbdv-online-sp20-hokangyu-client-angular';
+  student = [
+    'alice',
+    'kobe',
+    'steve'
+  ];
 }
