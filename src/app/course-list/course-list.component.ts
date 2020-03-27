@@ -20,8 +20,10 @@ export class CourseListComponent implements OnInit {
     this.course.title = this.courseTitle;
     this.service.createCourse(this.course);
   }
-  deleteCourse = (deleteCourse) =>
-    this.courses = this.courses.filter(course => course !== deleteCourse)
+  deleteCourse = (deleteCourse) => {
+    this.courses = this.courses.filter(course => course !== deleteCourse);
+    this.service.deleteCourse(deleteCourse._id);
+  }
   ngOnInit(): void {
     this.service.findAllCourses()
       .then(courses => this.courses = courses);
