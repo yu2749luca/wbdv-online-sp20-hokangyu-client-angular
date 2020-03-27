@@ -1,13 +1,12 @@
-<h3>Module List</h3>
+
+<h5>Module-list</h5>
 <ul class="list-group">
   <li *ngFor="let module of modules"
       [class]="{'active': moduleId === module._id}"
       class="list-group-item">
-    <a routerLink="/course-viewer/{{courseId}}/modules/{{module._id}}">{{module.title}}</a>
+    <a routerLink="/whiteboard/{{courseId}}/modules/{{module._id}}">{{module.title}}</a>
   </li>
-  <li>
-      <button
-        class="btn btn-outline-dark btn-block"
+  <button class="btn btn-outline-dark btn-block"
         (click)="addModule()"> create module </button>
-  </li>
+
 </ul>

@@ -1,14 +1,14 @@
 <h2>Course-List</h2>
-<ul>
-  <li *ngFor="let c of courses">
-    <button (click)="deleteCourse(c)">delete</button>
-    <a href="/course-viewer/{{c._id}}">{{c.title}}</a>
-  </li>
-  <li>
+<div>
+  <div *ngFor="let c of courses">
+    <button (click)="deleteCourse(c)" class="mr-1">x</button>
+    <a routerLink="/whiteboard/{{c._id}}">{{c.title}}</a>
+  </div>
+  <div>
     <input [(ngModel)]="courseTitle" />
-    <button (click)="addCourse()"> create course </button>
-  </li>
-</ul>
+    <button (click)="addCourse()"> + </button>
+  </div>
+</div>
 
 
 
