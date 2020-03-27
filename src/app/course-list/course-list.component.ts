@@ -14,8 +14,12 @@ export class CourseListComponent implements OnInit {
   courses = [
     {_id: '123', title: 'course 01'}, {_id: '124', title: 'course 02'}, {_id: '125', title: 'course 03'}
   ];
-  addCourse = () =>
-    this.courses.push({_id: '222', title: this.courseTitle})
+  course = {title: ''}
+  addCourse = () => {
+    this.courses.push({_id: '222', title: this.courseTitle});
+    this.course.title = this.courseTitle;
+    this.service.createCourse(this.course);
+  }
   deleteCourse = (deleteCourse) =>
     this.courses = this.courses.filter(course => course !== deleteCourse)
   ngOnInit(): void {

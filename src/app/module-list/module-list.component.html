@@ -5,4 +5,7 @@
       class="list-group-item">
     <a routerLink="/course-viewer/{{courseId}}/modules/{{module._id}}">{{module.title}}</a>
   </li>
+  <li>
+      <button (click)="addModule()"> create module </button>
+  </li>
 </ul>

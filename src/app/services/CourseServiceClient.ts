@@ -9,4 +9,15 @@ export class CourseServiceClient {
   findCourseById = (courseId) =>
     fetch(`${url}/${courseId}`)
       .then(response => response.json())
+  createCourse = async (course) => {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(course),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    return await response.json();
+  }
 }
+

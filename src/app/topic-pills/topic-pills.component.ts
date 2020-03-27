@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {TopicServiceClient} from '../services/TopicServiceClient';
 
 @Component({
   selector: 'app-topic-pills',
@@ -7,23 +8,23 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./topic-pills.component.css']
 })
 export class TopicPillsComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
-  topics = [
-    {_id: '123', title: 'topic 1' }, {_id: '124', title: 'topic 2' }, {_id: '123', title: 'topic 3' }
-  ]
+  constructor(private service: TopicServiceClient, private route: ActivatedRoute) { }
+  topics = []
   courseId = ''
   moduleId = ''
   lessonId = ''
   topicId = ''
+  addTopic = () => {
+    alert('refresh');
+    this.service.addTopic(this.lessonId);
+  }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.courseId = params.courseId;
       this.moduleId = params.courseId;
       this.lessonId = params.lessonId;
       this.topicId = params.topicId;
-      fetch(`https://wbdv-generic-server.herokuapp.com/api/yu2749luca/lesson/${this.lessonId}/topics`)
-        .then(response => response.json())
+      this.service.findAllTopicsByLesson(this.lessonId)
         .then(topics => this.topics = topics);
     });
   }

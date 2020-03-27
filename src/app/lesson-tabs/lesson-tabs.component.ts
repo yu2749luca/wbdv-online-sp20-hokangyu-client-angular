@@ -15,6 +15,10 @@ export class LessonTabsComponent implements OnInit {
   moduleId = ''
   courseId = ''
   lessonId = ''
+  addLesson = () => {
+    alert('refresh to see');
+    this.service.addLesson(this.moduleId);
+  }
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.moduleId = params.moduleId;

@@ -1,7 +1,13 @@
-<h3>Topics</h3>
-<ul >
-  <li class="list-group-item" *ngFor="let topic of topics">
-<!--    course-viewer/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId-->
-    <a href="#">{{topic.title}}</a>
+<ul class="nav nav-pills">
+  <li
+    [class]="{'active': topicId === topic._id}"
+    class="nav-item mr-5" *ngFor="let topic of topics">
+    <a
+      routerLink="course-viewer/{{courseId}}/modules/{{moduleId}}/lessons/{{lessonId}}/topics/{{topic._id}}">
+      {{topic.title}}
+    </a>
+  </li>
+  <li>
+    <button (click)="addTopic()"> + </button>
   </li>
 </ul>
