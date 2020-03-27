@@ -21,7 +21,7 @@ export class TopicPillsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.courseId = params.courseId;
-      this.moduleId = params.courseId;
+      this.moduleId = params.moduleId;
       this.lessonId = params.lessonId;
       this.topicId = params.topicId;
       this.service.findAllTopicsByLesson(this.lessonId)

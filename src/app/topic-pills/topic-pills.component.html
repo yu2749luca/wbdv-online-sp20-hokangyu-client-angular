@@ -1,9 +1,10 @@
 <ul class="nav nav-pills">
   <li
-    [class]="{'active': topicId === topic._id}"
-    class="nav-item mr-5" *ngFor="let topic of topics">
+    class="nav-item" *ngFor="let topic of topics">
     <a
-      routerLink="course-viewer/{{courseId}}/modules/{{moduleId}}/lessons/{{lessonId}}/topics/{{topic._id}}">
+      [class]="{'active': topicId === topic._id}"
+      class="nav-link"
+      routerLink="/course-viewer/{{courseId}}/modules/{{moduleId}}/lessons/{{lessonId}}/topics/{{topic._id}}">
       {{topic.title}}
     </a>
   </li>

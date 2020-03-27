@@ -13,6 +13,7 @@ import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
 import {LessonServiceClient} from './services/LessonServiceClient';
 import { TopicPillsComponent } from './topic-pills/topic-pills.component';
 import {TopicServiceClient} from './services/TopicServiceClient';
+import { WhiteboardComponent } from './whiteboard/whiteboard.component';
 
 
 
@@ -23,7 +24,8 @@ import {TopicServiceClient} from './services/TopicServiceClient';
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    TopicPillsComponent
+    TopicPillsComponent,
+    WhiteboardComponent
   ],
   imports: [
     FormsModule,

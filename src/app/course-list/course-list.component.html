@@ -4,7 +4,11 @@
     <button (click)="deleteCourse(c)">delete</button>
     <a href="/course-viewer/{{c._id}}">{{c.title}}</a>
   </li>
+  <li>
+    <input [(ngModel)]="courseTitle" />
+    <button (click)="addCourse()"> create course </button>
+  </li>
 </ul>
-<input [(ngModel)]="courseTitle" />
-<button (click)="addCourse()"> create course </button>
+
+
 
