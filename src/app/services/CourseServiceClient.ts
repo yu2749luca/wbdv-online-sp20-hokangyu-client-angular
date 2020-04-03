@@ -16,13 +16,13 @@ export class CourseServiceClient {
       headers: {
         'content-type': 'application/json'
       }
-    })
+    });
     return await response.json();
   }
   deleteCourse = async (courseId) => {
     const response = await fetch(`${url}/${courseId}`, {
       method: 'DELETE'
-    })
+    });
     return await response.json();
   }
 }
