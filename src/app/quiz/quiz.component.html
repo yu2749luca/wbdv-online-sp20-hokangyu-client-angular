@@ -1,0 +1,20 @@
+<div class="container">
+  <h1> Quiz </h1>
+  <ul>
+    <li *ngFor="let question of questions"
+        [ngSwitch]="question.type">
+      <app-true-false-question *ngSwitchCase="'TRUE_FALSE'"
+                               [question]="question"
+                               [grading]="grading"
+      ></app-true-false-question>
+      <app-multiple-choice-question *ngSwitchCase="'MULTIPLE_CHOICE'"
+                                    [question]="question"
+                                    [grading]="grading"
+      ></app-multiple-choice-question>
+      <br />
+    </li>
+    <button class="btn-success" (click)="grade()">Grade</button>
+  </ul>
+</div>
+
+

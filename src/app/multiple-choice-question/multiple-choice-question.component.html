@@ -1,0 +1,26 @@
+<h4>Multiple Choice, {{question.title}}</h4>
+  <h5>{{question.question}}
+    <label class="float-right" [hidden]="!grading">
+      <i [hidden]="answer===question.correct" class="fa fa-times"></i>
+      <i [hidden]="answer!==question.correct" class="fa fa-check"></i>
+    </label>
+  </h5>
+<div>
+  <ul *ngFor="let option of question.choices" class="list-group">
+    <li
+      [ngClass]="{
+    'list-group-item-danger': grading && answer!==question.correct && option===answer,
+    'list-group-item-success': grading && option===question.correct}"
+      class="list-group-item">
+      <input [(ngModel)]="answer"  type="radio" name="{{question._id}}" value="{{option}}"/> {{option}}
+      <label class="float-right" [hidden]="!grading || option!==answer">
+        <i [hidden]="answer===question.correct" class="fa fa-times"></i>
+        <i [hidden]="answer!==question.correct" class="fa fa-check"></i>
+      </label>
+    </li>
+  </ul>
+</div>
+
+Your Answer: {{answer}}
+<br />
+

@@ -1,14 +1,15 @@
 <h2>Course-List</h2>
-<div>
-  <div *ngFor="let c of courses">
+<ul class="list-group">
+  <li *ngFor="let c of courses" class="list-group-item">
     <button (click)="deleteCourse(c)" class="mr-1">x</button>
     <a routerLink="/whiteboard/{{c._id}}">{{c.title}}</a>
-  </div>
-  <div>
+    <a routerLink="courses/{{c._id}}/quizzes" class="float-right">Quiz</a>
+  </li>
+  <li class="list-group-item">
     <input [(ngModel)]="courseTitle" />
     <button (click)="addCourse()"> + </button>
-  </div>
-</div>
+  </li>
+</ul>
 
 
 

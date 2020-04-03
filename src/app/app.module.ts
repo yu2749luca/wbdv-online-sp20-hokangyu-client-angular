@@ -14,6 +14,12 @@ import {LessonServiceClient} from './services/LessonServiceClient';
 import { TopicPillsComponent } from './topic-pills/topic-pills.component';
 import {TopicServiceClient} from './services/TopicServiceClient';
 import { WhiteboardComponent } from './whiteboard/whiteboard.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import {QuizzesServiceClient} from './services/QuizzesServiceClient';
+import { QuizComponent } from './quiz/quiz.component';
+import {QuizServiceClient} from './services/QuizServiceClient';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 
 
 
@@ -25,7 +31,11 @@ import { WhiteboardComponent } from './whiteboard/whiteboard.component';
     ModuleListComponent,
     LessonTabsComponent,
     TopicPillsComponent,
-    WhiteboardComponent
+    WhiteboardComponent,
+    QuizzesComponent,
+    QuizComponent,
+    MultipleChoiceQuestionComponent,
+    TrueFalseQuestionComponent
   ],
   imports: [
     FormsModule,
@@ -36,7 +46,9 @@ import { WhiteboardComponent } from './whiteboard/whiteboard.component';
     CourseServiceClient,
     ModuleServiceClient,
     LessonServiceClient,
-    TopicServiceClient
+    TopicServiceClient,
+    QuizzesServiceClient,
+    QuizServiceClient
   ],
   bootstrap: [AppComponent]
 })
