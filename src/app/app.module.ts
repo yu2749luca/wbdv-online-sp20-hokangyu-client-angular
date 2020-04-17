@@ -20,6 +20,10 @@ import { QuizComponent } from './quiz/quiz.component';
 import {QuizServiceClient} from './services/QuizServiceClient';
 import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -35,7 +39,11 @@ import { TrueFalseQuestionComponent } from './true-false-question/true-false-que
     QuizzesComponent,
     QuizComponent,
     MultipleChoiceQuestionComponent,
-    TrueFalseQuestionComponent
+    TrueFalseQuestionComponent,
+    RegisterComponent,
+    ProfileComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,

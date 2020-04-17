@@ -3,9 +3,15 @@
   <ul class="list-group">
     <li *ngFor="let quiz of quizzes" class="list-group-item">
       <button (click)="deleteQuiz(quiz)" class="mr-2"> x </button>
-      <a routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}">{{quiz.title}}</a>
-      <a routerLink="/courses/{{courseId}}/quizzes/{{quiz._id}}" class="float-right">start</a>
+      <a routerLink="/courses/quizzes/{{quiz._id}}">{{quiz.title}}</a>
+      <p class="float-right"> Attempts: {{quiz.attempts.length}}</p>
+      <ul>
+        <li *ngFor = "let attempt of quiz.attempts">
+          {{attempt.score}}%
+        </li>
+      </ul>
     </li>
+
   </ul>
   <button (click)="createQuiz()" class="btn-block btn-success">create a quiz</button>
 </div>

@@ -5,15 +5,17 @@
         [ngSwitch]="question.type">
       <app-true-false-question *ngSwitchCase="'TRUE_FALSE'"
                                [question]="question"
+                               [(answer)]="question.answer"
                                [grading]="grading"
       ></app-true-false-question>
       <app-multiple-choice-question *ngSwitchCase="'MULTIPLE_CHOICE'"
                                     [question]="question"
+                                    [(answer)]="question.answer"
                                     [grading]="grading"
       ></app-multiple-choice-question>
       <br />
     </li>
-    <button class="btn-success" (click)="grade()">Grade</button>
+    <button class="btn-danger" (click)="submitQuiz()">submit quiz</button>
   </ul>
 </div>
 

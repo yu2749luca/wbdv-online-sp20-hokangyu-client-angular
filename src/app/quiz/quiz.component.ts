@@ -22,5 +22,18 @@ export class QuizComponent implements OnInit {
   grade = () => {
     this.grading = !this.grading;
   }
+
+  submitQuiz = () => {
+    this.grading = !this.grading;
+    fetch(`http://localhost:3000/api/quizzes/${this.quizId}/attempts`, {
+      method: 'POST',
+      body: JSON.stringify(this.questions),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json())
+      .then(result => console.log(result));
+  }
+
 }
 
