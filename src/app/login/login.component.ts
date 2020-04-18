@@ -9,10 +9,10 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
-  username: string
-  password: string
+  username: string;
+  password: string;
   login = (username, password) => {
-    fetch('http://localhost:3000/api/login/',{
+    fetch('http://localhost:3000/api/login/', {
       method: 'POST',
       body: JSON.stringify({username, password}),
       credentials: 'include',

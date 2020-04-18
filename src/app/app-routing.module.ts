@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'login', component: LoginComponent},
-  {path: '', component: HomeComponent},
+  {path: '', component: WhiteboardComponent},
   {path: 'quizzes', component: QuizzesComponent},
   {path: 'courses/:courseId/quizzes/:qid', component: QuizComponent },
   {path: 'courses/:courseId/quizzes', component: QuizzesComponent},
